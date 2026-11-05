@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ১. Tailwind v4 এর নতুন নিয়ম অনুযায়ী ক্লাস-বেসড ডার্ক মোড কনফিগার করা */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ২. DaisyUI এবং ব্রাউজারের ডিফল্ট ব্যাকগ্রাউন্ডকে লাইট মোডের জন্য সাদা করা */
+html, body, :root, [data-theme] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* ৩. যখন .dark ক্লাস অ্যাক্টিভ থাকবে (ডার্ক মোডে নেভি-ব্লু কালার) */
+html.dark, body.dark, .dark, [data-theme="dark"] {
+  background-color: #020617 !important;
+  color: #f8fafc !important;
+}
+
+/* ৪. ডার্ক মোডে কার্ড এবং লেখাগুলোর কালার ফিক্স */
+.dark .bg-white, .dark .bg-slate-50, .dark .card {
+  background-color: #0f172a !important;
+}
+
+.dark .text-slate-900, .dark .text-neutral {
+  color: #ffffff !important;
+}
